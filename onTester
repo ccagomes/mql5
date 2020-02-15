@@ -1,0 +1,58 @@
+double OnTester()
+{
+  double  param = 0.0;
+
+//  Balance max + min Drawdown + Trades Number:
+  double  balance = TesterStatistics(STAT_PROFIT);
+  double  trades_number = TesterStatistics(STAT_TRADES);
+  double  custos = TesterStatistics(STAT_TRADES)*0.80;
+  double  saldo = TesterStatistics(STAT_PROFIT) - custos;
+  double    min_dd = TesterStatistics(STAT_EQUITY_DD);
+     
+     if(min_dd > 0.0)
+  {
+    min_dd = 1.0 / min_dd;
+  }
+   // param = balance * min_dd * trades_number;
+   
+   
+           if( balancemin==true)
+     { 
+     param = TesterStatistics(STAT_BALANCEMIN);
+     }
+   
+           if( equity_dd==true)
+     { 
+     param = TesterStatistics(STAT_EQUITY_DD);
+     }
+     
+           if( conlossmax==true)
+     { 
+     param = TesterStatistics(STAT_CONLOSSMAX);
+     }
+     
+           if( conlossmax_trades==true)
+     { 
+     param = TesterStatistics(STAT_CONLOSSMAX_TRADES);
+     }
+   
+           if( conwinsmax==true)
+     { 
+     param = TesterStatistics(STAT_MAX_CONWINS);
+     }
+     
+           if( conwinsmax_trades==true)
+     { 
+     param = TesterStatistics(STAT_MAX_CONPROFIT_TRADES);
+     }
+     
+           if( saldocustos==true)
+     { 
+     param = saldo;
+     }
+   
+  
+    ;
+
+  return(param);
+}
