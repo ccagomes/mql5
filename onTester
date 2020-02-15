@@ -1,3 +1,15 @@
+input string Optimization="----"; //------------Optimization/OnTester/CustomMax------------
+input bool   balancemin=false; //Saldo Mínimo da Conta
+input bool   equity_dd=false; //Drawdown
+input bool   conlossmax=false; //Máx. de perdas consecutivas ($)
+input bool   conlossmax_trades=false; //Máx. nº de perdas consecutivas (#)
+input bool   conwinsmax=false; //Máx. de lucros consecutivos ($)
+input bool   conwinsmax_trades=false; //Máx. nº de lucros consecutivos (#)
+input bool   saldocustos=false; //Saldo - Comissões (R$0,83/full trade) [rFactor off]
+input double custo_in_out=0.8; //Custo Total do Trade Entrada e Saída
+
+
+
 double OnTester()
 {
   double  param = 0.0;
@@ -5,7 +17,7 @@ double OnTester()
 //  Balance max + min Drawdown + Trades Number:
   double  balance = TesterStatistics(STAT_PROFIT);
   double  trades_number = TesterStatistics(STAT_TRADES);
-  double  custos = TesterStatistics(STAT_TRADES)*0.80;
+  double  custos = TesterStatistics(STAT_TRADES)*custo_in_out;
   double  saldo = TesterStatistics(STAT_PROFIT) - custos;
   double    min_dd = TesterStatistics(STAT_EQUITY_DD);
      
