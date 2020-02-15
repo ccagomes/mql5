@@ -5,8 +5,8 @@ input bool   conlossmax=false; //Máx. de perdas consecutivas ($)
 input bool   conlossmax_trades=false; //Máx. nº de perdas consecutivas (#)
 input bool   conwinsmax=false; //Máx. de lucros consecutivos ($)
 input bool   conwinsmax_trades=false; //Máx. nº de lucros consecutivos (#)
-input bool   saldocustos=false; //Saldo - Comissões (R$0,83/full trade) [rFactor off]
-input double custo_in_out=0.8; //Custo Total do Trade Entrada e Saída
+input bool   saldocustos=false; //Saldo - Comissões [rFactor off]
+input double custo_in_out=0.8; //Custo Total do Trade Entrada e Saída (Comissões)
 
 
 
